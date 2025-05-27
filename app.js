@@ -7,7 +7,7 @@ require('dotenv').config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-//const Listing = require("../models/listing.js");
+const Listing = require("./models/listing.js");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
@@ -59,10 +59,24 @@ app.engine("ejs",ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
 
 //API
-// app.get("/",(req ,res)=>{
-//     res.send("hi , i am root");
+ app.get("/",(req ,res)=>{
+   // res.send("Welcome, to Wanderlust");
+    res.redirect("/listings");
 
+ });
+// app.get("/", async (req, res) => {
+//   try {
+//     const allListings = await Listing.find({});
+//     res.render("index", { allListings });
+//   } catch (err) {
+//     console.error("Error fetching listings:", err);
+//     req.flash("error", "Something went wrong loading listings.");
+//     res.redirect("/listings");
+//   }
 // });
+
+
+
 const store =  MongoStore.create({
   mongoUrl : dbUrl,
   crypto : {
