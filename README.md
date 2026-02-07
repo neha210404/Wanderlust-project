@@ -18,8 +18,7 @@ Wanderlust is a travel destination web application built using **Node.js**, **Ex
 - **MongoDB & Mongoose**
 - **EJS Templating**
 - **Cloudinary (for image uploads)**
-- **Mapbox or Google Maps** (optional for geolocation)
-- **Bootstrap** or custom CSS
+  
 
 ## Setup Instructions
 
@@ -46,7 +45,7 @@ or
 nodemon app.js
 
 5. Visit 
-http://localhost:8080/listings
+https://wanderlust-project-f5v6.onrender.com
 
 Folder Structure
 Wanderlust-project/
